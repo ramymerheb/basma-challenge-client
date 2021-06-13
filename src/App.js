@@ -67,8 +67,8 @@ function App() {
   const handleEmailChange = (value) => {
     setEmail(value);
   };
-  const handleNameChange = (value) => setName(value), [];
-  const handleHoneyPotChange =(value) => setHoneyPot(value), [];
+  const handleNameChange = (value) => setName(value);
+  const handleHoneyPotChange =(value) => setHoneyPot(value);
 
   return (
     <Page title="Basma Challenge">
