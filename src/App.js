@@ -17,7 +17,7 @@ function App() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState();
   const [captcha, setCaptcha] = useState("");
   const [honeyPot, setHoneyPot] = useState("");
   const [hideButton, setHideButton] = useState(false);

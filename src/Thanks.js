@@ -10,6 +10,7 @@ function Thanks() {
     <Page title="Basma Challenge">
         <Card title="Subscription Succeful" sectioned>
             <p>Thank you for your subscribtion.</p>
+            <p>Please check your email to verirfy your account</p>
         </Card>
     </Page>
   );
