@@ -33,6 +33,12 @@ function App() {
       history.push("/thanks");
     }
 
+    if (captcha === "") {
+      setHideButton(false);
+      alert("Captcha is required");
+      return;
+    }
+
     if (email === "") {
       setHideButton(false);
       setErrors({ ...setErrors, email: "Email is required!" });
