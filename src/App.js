@@ -8,7 +8,7 @@ import {
   Card,
 } from "@shopify/polaris";
 
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import clientsServices from "./services/clients.services";
 import ReCAPTCHA from "react-google-recaptcha";
