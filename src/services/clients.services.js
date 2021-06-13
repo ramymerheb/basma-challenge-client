@@ -19,7 +19,8 @@ class ClientService {
               }
               console.log("err ", err)
             console.log(err.response.data);
-            throw err;
+            // throw err;
+            return false;
           });
       };
 }

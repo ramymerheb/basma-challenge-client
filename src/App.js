@@ -20,6 +20,7 @@ function App() {
   const [image, setImage] = useState("");
   const [captcha, setCaptcha] = useState("");
   const [honeyPot, setHoneyPot] = useState("");
+  const [hideButton, setHideButton] = useState(false);
 
   const [errors, setErrors] = useState({
     email: "",
@@ -27,6 +28,7 @@ function App() {
   });
 
   const handleSubmit = () => {
+    setHideButton(true);
     if (honeyPot !== "") {
       history.push("/thanks");
     }
@@ -40,7 +42,7 @@ function App() {
       setErrors({ ...setErrors, name: "Name is required!" });
       return;
     }
-    let fd = new FormData()
+    let fd = new FormData();
     fd.append("email", email);
     fd.append("name", name);
     fd.append("image", image);
@@ -50,14 +52,14 @@ function App() {
       if (status) {
         history.push("/thanks");
       }
+      setHideButton(false);
     });
+
   };
 
-    const onImageChange = event => {
-      let images = event.target.files[0];
-      setImage(
-        images
-      );
+  const onImageChange = (event) => {
+    let images = event.target.files[0];
+    setImage(images);
   };
 
   function onChange(value) {
@@ -68,11 +70,11 @@ function App() {
     setEmail(value);
   };
   const handleNameChange = (value) => setName(value);
-  const handleHoneyPotChange =(value) => setHoneyPot(value);
+  const handleHoneyPotChange = (value) => setHoneyPot(value);
 
   return (
     <Page title="Basma Challenge">
-      <Card title="Login">
+      <Card title="Subscribe">
         <Card.Section>
           <Form>
             <FormLayout>
@@ -108,10 +110,11 @@ function App() {
                 sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
                 onChange={onChange}
               />
-
-              <Button type="button" onClick={handleSubmit}>
-                Subscribe
-              </Button>
+              <div hidden={hideButton}>
+                <Button type="button" onClick={handleSubmit}>
+                  Subscribe
+                </Button>
+              </div>
             </FormLayout>
           </Form>
         </Card.Section>
