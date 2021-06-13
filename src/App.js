@@ -34,11 +34,13 @@ function App() {
     }
 
     if (email === "") {
+      setHideButton(false);
       setErrors({ ...setErrors, email: "Email is required!" });
       return;
     }
 
     if (name === "") {
+      setHideButton(false);
       setErrors({ ...setErrors, name: "Name is required!" });
       return;
     }
